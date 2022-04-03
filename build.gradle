@@ -5,6 +5,7 @@ plugins {
 
     id 'java'
     id 'jacoco'
+    id 'checkstyle'
 }
 
 group = 'com.gtlab.godjigame.wax'
@@ -44,6 +45,17 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+checkstyle {
+    toolVersion '10.1';
 }
 
 jacocoTestReport {
