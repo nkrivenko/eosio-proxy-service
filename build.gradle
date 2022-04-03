@@ -1,6 +1,8 @@
 plugins {
     id 'org.springframework.boot' version '2.6.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'com.google.cloud.tools.jib' version '3.2.1'
+
     id 'java'
 }
 
@@ -18,6 +20,10 @@ repositories {
     mavenCentral()
 }
 
+configurations.all {
+    exclude module: 'slf4j-jdk14'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -25,10 +31,9 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
-    implementation 'one.block:eosiojava:1.0.0'
-    implementation 'one.block:eosiojavasoftkeysignatureprovider:1.0.0'
-    implementation 'one.block:eosiojavaandroidabieosserializationprovider:1.0.0'
-    implementation 'one.block:eosio-java-rpc-provider:1.0.0'
+    implementation('one.block:eosiojava:1.0.0')
+    implementation('one.block:eosiojavasoftkeysignatureprovider:1.0.0')
+    implementation('one.block:eosio-java-rpc-provider:1.0.0')
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
