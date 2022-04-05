@@ -10,14 +10,13 @@ import com.gtlab.godjigame.wax.eosioproxyservice.exceptions.TransactionPreparati
 import com.gtlab.godjigame.wax.eosioproxyservice.rpc.errors.EosioJavaRpcProviderCallError;
 import com.gtlab.godjigame.wax.eosioproxyservice.services.EosProxyService;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import java.util.List;
 import one.block.eosiojava.error.session.TransactionPrepareError;
 import one.block.eosiojava.error.session.TransactionSignAndBroadCastError;
 import one.block.eosiojava.session.TransactionProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Implementation of {@code EosProxyService}.

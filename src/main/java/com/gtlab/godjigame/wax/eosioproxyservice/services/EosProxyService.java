@@ -3,7 +3,6 @@ package com.gtlab.godjigame.wax.eosioproxyservice.services;
 import com.gtlab.godjigame.wax.eosioproxyservice.dto.ActionDto;
 import com.gtlab.godjigame.wax.eosioproxyservice.exceptions.EosioException;
 import com.gtlab.godjigame.wax.eosioproxyservice.exceptions.EosioJavaRpcException;
-
 import java.util.List;
 
 /**

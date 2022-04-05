@@ -1,9 +1,9 @@
 package com.gtlab.godjigame.wax.eosioproxyservice.exceptions;
 
+import static java.util.Objects.requireNonNull;
+
 import com.gtlab.godjigame.wax.eosioproxyservice.rpc.errors.EosioJavaRpcProviderCallError;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
-import static java.util.Objects.requireNonNull;
 
 /**
  * RuntimeException wrapper for EosioJava RPC errors.
