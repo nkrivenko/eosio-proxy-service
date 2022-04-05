@@ -20,6 +20,13 @@ configurations {
 }
 
 repositories {
+    maven {
+        url = project.findProperty("package_registry") ?: System.getenv("PACKAGE_REGISTRY")
+        credentials {
+            username = project.findProperty("package_username") ?: System.getenv("PACKAGE_USERNAME")
+            password = project.findProperty("package_password") ?: System.getenv("PACKAGE_PASSWORD")
+        }
+    }
     mavenCentral()
 }
 
@@ -36,9 +43,15 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
-    implementation('one.block:eosiojava:1.0.0')
-    implementation('one.block:eosiojavasoftkeysignatureprovider:1.0.0')
-    implementation('one.block:eosio-java-rpc-provider:1.0.0')
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+
+    implementation 'one.block:eosiojava:1.0.0'
+    implementation 'one.block:eosiojavasoftkeysignatureprovider:1.0.0'
+    implementation 'one.block:eosio-java-abieos-serialization-provider:1.0.0'
+
+    implementation 'org.json:json:20220320'
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -78,7 +91,17 @@ jacocoTestReport {
     dependsOn test
     reports {
         xml.required = false
-        html.required = false
+        html.required = true
         csv.required = true
+    }
+
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    'com/gtlab/godjigame/wax/eosioproxyservice/rpc/**',
+                    'com/gtlab/godjigame/wax/eosioproxyservice/exceptions/**',
+                    'com/gtlab/godjigame/wax/eosioproxyservice/dto/**'
+            ])
+        }))
     }
 }

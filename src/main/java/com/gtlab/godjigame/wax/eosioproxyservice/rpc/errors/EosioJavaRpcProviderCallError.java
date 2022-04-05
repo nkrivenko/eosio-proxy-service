@@ -18,13 +18,15 @@ public class EosioJavaRpcProviderCallError extends RpcProviderError {
      * Contains additional information about errors coming back from the blockchain, if available.
      */
     @Nullable
-    private RPCResponseError rpcResponseError;
+    private final RPCResponseError rpcResponseError;
 
     public EosioJavaRpcProviderCallError() {
+        rpcResponseError = null;
     }
 
     public EosioJavaRpcProviderCallError(@NotNull String message) {
         super(message);
+        rpcResponseError = null;
     }
 
     public EosioJavaRpcProviderCallError(@NotNull String message,
@@ -36,26 +38,24 @@ public class EosioJavaRpcProviderCallError extends RpcProviderError {
     public EosioJavaRpcProviderCallError(@NotNull String message,
                                          @NotNull Exception exception) {
         super(message, exception);
+        rpcResponseError = null;
     }
 
     public EosioJavaRpcProviderCallError(
         @NotNull Exception exception) {
         super(exception);
+        rpcResponseError = null;
     }
 
     public EosioJavaRpcProviderCallError(@NotNull String message,
                                          @NotNull Exception exception,
-                                         @Nullable RPCResponseError rpcRepsonseError) {
+                                         @Nullable RPCResponseError rpcResponseError) {
         super(message, exception);
-        this.rpcResponseError = rpcRepsonseError;
+        this.rpcResponseError = rpcResponseError;
     }
 
     @Nullable
     public RPCResponseError getRpcResponseError() {
         return rpcResponseError;
-    }
-
-    public void setRpcResponseError(@Nullable RPCResponseError rpcResponseError) {
-        this.rpcResponseError = rpcResponseError;
     }
 }
