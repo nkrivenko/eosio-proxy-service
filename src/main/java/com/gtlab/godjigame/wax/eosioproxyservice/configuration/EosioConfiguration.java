@@ -12,7 +12,6 @@ import one.block.eosiojava.session.TransactionProcessor;
 import one.block.eosiojava.session.TransactionSession;
 import one.block.eosiojavaabieosserializationprovider.AbiEosSerializationProviderImpl;
 import one.block.eosiosoftkeysignatureprovider.SoftKeySignatureProviderImpl;
-import one.block.eosiosoftkeysignatureprovider.error.ImportKeyError;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,10 +42,8 @@ public class EosioConfiguration {
     }
 
     @Bean
-    ISignatureProvider signatureProvider() throws ImportKeyError {
-        final SoftKeySignatureProviderImpl softKeySignatureProvider = new SoftKeySignatureProviderImpl();
-        softKeySignatureProvider.importKey("5KMj4F4dn58pcmA5grUe3Awv7D8doYEhKT2QLd2PHuN8ruB4Mdf");
-        return softKeySignatureProvider;
+    ISignatureProvider signatureProvider() {
+        return new SoftKeySignatureProviderImpl();
     }
 
     @Bean
