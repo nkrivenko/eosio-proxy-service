@@ -1,1 +1,5 @@
-
+application:
+  eosio.rpc.endpoint: http://testnet-wax.3dkrender.com/
+  authorization:
+    actor: test
+    permission: active

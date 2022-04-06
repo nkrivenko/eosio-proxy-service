@@ -10,6 +10,9 @@ on:
 
 env:
   IMAGE: nkrivenko/eosio-proxy-service
+  PACKAGE_REGISTRY: ${{ secrets.PACKAGE_REGISTRY }}
+  PACKAGE_USERNAME: ${{ secrets.PACKAGE_USERNAME }}
+  PACKAGE_PASSWORD: ${{ secrets.PACKAGE_PASSWORD }}
 
 jobs:
   build:

@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "application.eosio.rpc.endpoint",
+      "type": "java.lang.String",
+      "description": "EOS/WAX RPC Endpoint."
+    },
+    {
+      "name": "application.authorization.actor",
+      "type": "java.lang.String",
+      "description": "Proxy account name."
+    },
+    {
+      "name": "application.authorization.permission",
+      "type": "java.lang.String",
+      "description": "Proxy account permission."
+    }
+  ] }

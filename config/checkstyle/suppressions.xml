@@ -1,0 +1,12 @@
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]EosioProxyServiceApplication\.java" checks=".*"/>
+    <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]controllers[\\/]" checks=".*"/>
+    <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]rpc[\\/]" checks=".*"/>
+    <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]rpc[\\/]impl[\\/]" checks=".*"/>
+    <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]rpc[\\/]errors[\\/]" checks=".*"/>
+    <suppress checks="MissingJavadocType" files=".*[\\/]src[\\/]test[\\/]" />
+</suppressions>
