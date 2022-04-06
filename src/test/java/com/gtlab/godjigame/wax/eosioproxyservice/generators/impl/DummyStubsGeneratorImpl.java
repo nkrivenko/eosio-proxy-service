@@ -2,11 +2,10 @@ package com.gtlab.godjigame.wax.eosioproxyservice.generators.impl;
 
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.gtlab.godjigame.wax.eosioproxyservice.generators.DummyStubsGenerator;
+import java.util.ArrayList;
 import one.block.eosiojava.models.rpcProvider.Action;
 import one.block.eosiojava.models.rpcProvider.Authorization;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 
 @Component
 public class DummyStubsGeneratorImpl implements DummyStubsGenerator {

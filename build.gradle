@@ -50,7 +50,7 @@ dependencies {
 
     implementation 'one.block:eosiojava:1.0.0'
     implementation 'one.block:eosiojavasoftkeysignatureprovider:1.0.0'
-    implementation 'one.block:eosio-java-abieos-serialization-provider:1.0.0'
+    implementation 'com.gtlab:eosio-serialization:1.0.0.RELEASE'
 
     implementation 'org.json:json:20220320'
 

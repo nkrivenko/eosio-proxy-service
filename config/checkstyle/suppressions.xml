@@ -8,4 +8,5 @@
     <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]rpc[\\/]" checks=".*"/>
     <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]rpc[\\/]impl[\\/]" checks=".*"/>
     <suppress files="com[\\/]gtlab[\\/]godjigame[\\/]wax[\\/]eosioproxyservice[\\/]rpc[\\/]errors[\\/]" checks=".*"/>
+    <suppress checks="MissingJavadocType" files=".*[\\/]src[\\/]test[\\/]" />
 </suppressions>
